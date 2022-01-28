@@ -5,7 +5,7 @@ import { PlayersModule } from './players/players.module';
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb+srv://admin:1234@cluster0.hlnfr.mongodb.net/smartranking?retryWrites=true&w=majority',
-    { useNewUrlParser: true, useCreateIndex: true,  useUnifiedTopology: true, useFindAndModify: false}),
+    { useNewUrlParser: true, useUnifiedTopology: true}),
     PlayersModule, 
   ],
   controllers: [],
