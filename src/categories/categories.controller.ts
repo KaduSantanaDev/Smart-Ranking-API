@@ -20,6 +20,7 @@ export class CategoriesController {
   }
   
   @Get('/:_id')
+  @UsePipes(ValidationPipe)
   async getCategorieById(@Param('_id') _id: string): Promise<Category> {
     return await this.categoriesService.getCategorieById(_id)
   }
@@ -27,5 +28,10 @@ export class CategoriesController {
   @Put('/:_id')
   async updateCateogry(@Body() updateCategoryDto: UpdateCategoryDto, @Param('_id') _id: string): Promise<void> {
     return await this.categoriesService.updateCategory(_id, updateCategoryDto)
+  }
+  
+  @Post('/:_id/players/:_idPlayer')
+  async createCategoryPlayer(@Param() params: string[]): Promise<void> {
+    return await this.categoriesService.createCategoryPlayer(params)
   }
 }
