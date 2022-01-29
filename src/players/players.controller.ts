@@ -1,6 +1,6 @@
 import { PlayersService } from './players.service';
 import { CreatePlayerDto } from './dtos/create-player.dto';
-import { Body, Controller, Delete, Get, Post, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Post, Query, UsePipes, ValidationPipe } from '@nestjs/common';
 import { Player } from './interfaces/player.interface';
 
 @Controller('api/v1/jogadores')
@@ -9,6 +9,7 @@ export class PlayersController {
   }
   
   @Post()
+  @UsePipes(ValidationPipe)
   async createUpdatePlayer(@Body() createPlayerDto: CreatePlayerDto) {
     await this.playerService.createUpdatePlayer(createPlayerDto)
   }
