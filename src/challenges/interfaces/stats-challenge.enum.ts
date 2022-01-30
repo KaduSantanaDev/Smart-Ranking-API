@@ -1,0 +1,7 @@
+export enum StatsChallenge {
+  ACCOMPLISHED = 'ACCOMPLISHED',
+  PENDING = 'PENDING',
+  ACCEPTED = 'ACCEPTED',
+  DECLINE = 'DECLINE',
+  CANCELED = 'CANCELED'
+}

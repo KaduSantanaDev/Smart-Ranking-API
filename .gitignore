@@ -27,7 +27,9 @@ lerna-debug.log*
 .settings/
 *.sublime-workspace
 
+#JSONS
 category.json
+challenges.json
 
 # IDE - VSCode
 .vscode/*
